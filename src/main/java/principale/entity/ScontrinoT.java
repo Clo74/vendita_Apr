@@ -22,14 +22,14 @@ import javax.persistence.Table;
  * @author tss
  */
 @Entity
-@Table(name="t_scontrini_righe")
+@Table(name="t_scontrini_testa")
 public class ScontrinoT implements Serializable {
     //id_scontrino, data, id_negozio
     @Id
     @Column(name="id_scontrino")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
+        
     @Column(name="data_scontrino")
     @JsonbDateFormat("dd/MM/yyyy")
     private LocalDate data;

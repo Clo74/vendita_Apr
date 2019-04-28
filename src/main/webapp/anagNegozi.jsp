@@ -24,20 +24,20 @@
             </br>
             <form class="pure-form pure-form-aligned">
                 <fieldset>      
-                    <input type="text" id="idRec">
-                    <div id="dati" class="pure-control-group">
+                    <input type="hidden" id="idRec">
+                    <div class="pure-control-group">
                         <label for="descNeg">Descrizione: </label>
                         <input id="descNeg" type="text"/>
                     </div>
-                    <div id="dati" class="pure-control-group">                    
+                    <div class="pure-control-group">                    
                         <label for="address">Indirizzo: </label>
                         <input id="address" type="text"/>
                     </div>
-                    <div id="dati" class="pure-control-group">                    
+                    <div class="pure-control-group">                    
                         <label for="mail">E-mail: </label>
                         <input id="mail" type="text"/>
                     </div>
-                    <div id="dati" class="pure-control-group">
+                    <div class="pure-control-group">
                         <label for="tel">Telefono: </label>
                         <input id="tel" type="text"/>
                     </div>

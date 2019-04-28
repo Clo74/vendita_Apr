@@ -5,19 +5,19 @@ class App {
 
     constructor() {
         this.service = new NegozioService();
-        
+
         this.desc = document.querySelector("#descNeg");
         this.address = document.querySelector("#address");
         this.mail = document.querySelector("#mail");
         this.tel = document.querySelector("#tel");
-        
+
         this.onSave = this.onSave.bind(this);
         this.btOnSave = document.querySelector("#btConfirm");
         this.btOnSave.onclick = this.onSave;
         this.idRec = document.querySelector("#idRec");
         this.tb = new Tabella({
             service: this.service,
-            idTabella: "tblTags",
+            idTabella: "tblNegozi",
             classeTabella: "pure-table table-select",
             contenitore: "#contenitore",
             callbackUpdate: this.onUpdate,
@@ -42,29 +42,30 @@ class App {
 
         if (confirm("Confermi di voler cancellare?")) {
             this.service.delete(idMod);
+
             this.tb.reloadData();
+
         }
-        
     }
-    
-    onSave(){
+
+    onSave() {
         let idRec = document.querySelector("#idRec").value;
         if (idRec !== "" && idRec !== null) {
             //se c'è id a video devo modicare il record
-            this.service.update(idRec,{
+            this.service.update(idRec, {
                 descrizione: this.desc.value,
                 indirizzo: this.address.value,
                 tel: this.tel.value,
                 email: this.mail.value
             });
-        }else{
+        } else {
             //se non c'è l'id devo inserire
             this.service.create({
                 descrizione: this.desc.value,
                 indirizzo: this.address.value,
                 tel: this.tel.value,
                 email: this.mail.value
-            });   
+            });
         }
         this.tb.reloadData();
     }
